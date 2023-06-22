@@ -1,7 +1,17 @@
 import { terms } from './data.js';
+import {processSearchInput} from './search.js';
 
-document.addEventListener('DOMContentLoaded', createGlossaryNav);
-document.addEventListener('DOMContentLoaded', createGlossarySections);
+main();
+
+function main(){
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  
+  document.addEventListener('DOMContentLoaded', createGlossaryNav);
+  document.addEventListener('DOMContentLoaded', createGlossarySections);
+  
+  searchInput.addEventListener('input', (event) => processSearchInput(event,  searchResults, terms))
+}
 
 function createGlossaryNav(){
   var buttonContainer = document.getElementById('button-container');
@@ -16,7 +26,9 @@ function createGlossaryNav(){
 }
 
 function createGlossarySections(){
-  const sortedTerms= terms.map(term => ({ id: term.id, title: term.title })).sort((a, b) => a.title.localeCompare(b.title));
+  const sortedTerms= terms.map(
+    term => ({ id: term.id, title: term.title })).sort((a, b) => a.title.localeCompare(b.title)
+  );
 
   const sectionsContainer = document.getElementById('sections-container');
 

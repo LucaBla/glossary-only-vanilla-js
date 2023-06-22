@@ -3,6 +3,8 @@ body {
   margin: 0;
   font-size: 20px;
   font-family: 'Courier New', Courier, monospace;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 nav{
@@ -78,6 +80,7 @@ h1{
   justify-content: center;
   justify-self: center;
   align-self: center;
+  position: relative;
 }
 
 .landing-content input{
@@ -87,6 +90,37 @@ h1{
   font-size: 1.5rem;
   width: 30vw;
   min-width: 300px;
+}
+
+#search-results{
+  position: absolute;
+  top: 120px;
+  margin: 0px;
+  width: 100%;
+  min-width: 300px;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  list-style: none;
+  padding: 0px;
+  background-color: #0B2239;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+#search-results li{
+  padding: 5px 10px;
+  border-bottom: 1px solid #113255;
+  color: white;
+}
+
+#search-results li a{
+  text-decoration: none;
+  color: unset;
+  display: flex;
+  align-items: center;
+}
+#search-results li a ion-icon{
+  font-size: 1.5rem;
 }
 
 .glossary-nav{
@@ -166,6 +200,21 @@ h1{
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0px;
+}
+
+.show-nav input{
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.25rem;
+  width: 30vw;
+  min-width: 300px;
+}
+
+.show-nav #search-results{
+  top: 50px;
+  width: 30vw;
+  padding: 5px 10px;
 }
 
 #show-sections-container{

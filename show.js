@@ -1,8 +1,14 @@
 import { terms } from './data.js';
+import {processSearchInput} from './search.js';
 
 const urlParams = new URLSearchParams(window.location.search);
 
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+
 document.addEventListener('DOMContentLoaded', loadContent);
+
+searchInput.addEventListener('input', (event) => processSearchInput(event,  searchResults, terms))
 
 function loadContent() {
   const term = terms.find((term) => term.id === parseInt(urlParams.get('id')));
