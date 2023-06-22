@@ -59,6 +59,11 @@ h1{
   font-size: 2rem;
 }
 
+.title a{
+  text-decoration: none;
+  color: white;
+}
+
 .icons{
   display: flex;
   align-items: center;
@@ -135,4 +140,45 @@ h1{
   display: grid;
   grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
   gap: 25px;
+}
+
+/*  */
+
+.show-nav{
+  background: url(./imgs/header_bg.svg);
+  background-size: cover;
+  background-position: 0% 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+#show-header{
+  background-color: #5A6099;
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#show-header h1{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0px;
+}
+
+#show-sections-container{
+  padding: 0px 20%;
+}
+
+#show-sections-container h2{
+  font-size: 1.25rem;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+#show-sections-container div{
+  white-space: pre-wrap;
+  line-height: 150%;
 }
