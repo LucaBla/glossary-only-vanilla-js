@@ -182,3 +182,8 @@ h1{
   white-space: pre-wrap;
   line-height: 150%;
 }
+
+#show-date-container{
+  margin: 0px 20%;
+  margin-top: 100px;
+}

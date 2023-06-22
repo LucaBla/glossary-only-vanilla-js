@@ -16,7 +16,7 @@ function createGlossaryNav(){
 }
 
 function createGlossarySections(){
-  const sortedTerms= terms.map(term => ({ id: term.id, title: term.title })).sort();
+  const sortedTerms= terms.map(term => ({ id: term.id, title: term.title })).sort((a, b) => a.title.localeCompare(b.title));
 
   const sectionsContainer = document.getElementById('sections-container');
 

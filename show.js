@@ -11,6 +11,8 @@ function loadContent() {
 
   addSections(term);
 
+  addLastEdited(term);
+
 }
 
 function addHeader(title){
@@ -52,4 +54,24 @@ function addSectionContent(section, content){
   const sectionContent = document.createElement('div');
   sectionContent.innerHTML = content;
   section.appendChild(sectionContent);
+}
+
+function addLastEdited(term){
+  const dateContainer = document.getElementById('show-date-container');
+  const content = document.createElement('div');
+
+  var date = term.lastEdited; 
+
+  var day = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+
+  var hours = date.getHours();
+var minutes = date.getMinutes();
+
+  var dateString = day + '/' + month + '/' + year + ', ' + hours + ':' + minutes;
+
+  content.textContent = dateString;
+
+  dateContainer.appendChild(content);
 }
