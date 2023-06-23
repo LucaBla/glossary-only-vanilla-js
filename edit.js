@@ -1,27 +1,23 @@
 import { terms } from './data.js';
 
-const urlParams = new URLSearchParams(window.location.search);
-
-document.addEventListener('DOMContentLoaded', loadContent);
-
-const term = terms.find((term) => term.id === parseInt(urlParams.get('id')));
+loadContent();
 
 function loadContent() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const term = terms.find((term) => term.id === parseInt(urlParams.get('id')));
 
-  addFunctionToSaveButton();
+  addFunctionToSaveButton(term);
 
-  addHeader(term.title)
+  addHeader(term);
 
   addSections(term);
 
   document.querySelectorAll("textarea").forEach((textarea) => adjustTextareaHeight(textarea))
 
   addAddSectionButton(term);
-
-
 }
 
-function addFunctionToSaveButton(){
+function addFunctionToSaveButton(term){
   const saveButton = document.getElementsByName('save-outline')[0]
 
   saveButton.addEventListener("click", function(){
@@ -30,12 +26,12 @@ function addFunctionToSaveButton(){
   })
 }
 
-function addHeader(title){
+function addHeader(term){
   const header = document.getElementById('show-header');
   const inputHeader = document.createElement("input");
 
   inputHeader.type = "text";
-  inputHeader.value = title;
+  inputHeader.value = term.title;
 
   inputHeader.addEventListener("input", function(event){
     term.title = event.target.value;
@@ -98,7 +94,6 @@ function addSectionContent(index, term, section, content){
     term.sections[index].description = event.target.value;
     adjustTextareaHeight(sectionContent);
   });
-  //sectionContent.innerHTML = content;
   section.appendChild(sectionContent);
 }
 

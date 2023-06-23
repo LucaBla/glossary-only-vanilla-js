@@ -1,6 +1,6 @@
 export function processSearchInput(event, searchResults, terms){
-  var searchTerm = event.target.value.toLowerCase();
-  var filteredTerms = terms.filter(function(term) {
+  const searchTerm = event.target.value.toLowerCase();
+  const filteredTerms = terms.filter(function(term) {
     if(searchTerm !== ''){
       return term.title.toLowerCase().includes(searchTerm);
     }

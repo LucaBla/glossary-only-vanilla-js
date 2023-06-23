@@ -1,23 +1,24 @@
 import { terms } from './data.js';
 import {processSearchInput} from './search.js';
 
-const urlParams = new URLSearchParams(window.location.search);
-
-const searchInput = document.getElementById('search-input');
-const searchResults = document.getElementById('search-results');
-
-document.addEventListener('DOMContentLoaded', loadContent);
-
-searchInput.addEventListener('input', (event) => processSearchInput(event,  searchResults, terms))
+loadContent();
 
 function loadContent() {
+  const urlParams = new URLSearchParams(window.location.search);
   const term = terms.find((term) => term.id === parseInt(urlParams.get('id')));
 
+  addSearchInput()
   addHeader(term.title)
   addSections(term);
   addLastEdited(term);
-  addEditLink();
+  addEditLink(urlParams);
+}
 
+function addSearchInput(){
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+
+  searchInput.addEventListener('input', (event) => processSearchInput(event,  searchResults, terms))
 }
 
 function addHeader(title){
@@ -65,23 +66,23 @@ function addLastEdited(term){
   const dateContainer = document.getElementById('show-date-container');
   const content = document.createElement('div');
 
-  var date = term.lastEdited; 
+  const date = term.lastEdited; 
 
-  var day = date.getDate();
-  var month = date.getMonth() + 1;
-  var year = date.getFullYear();
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
 
-  var hours = date.getHours();
-var minutes = date.getMinutes();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
 
-  var dateString = day + '/' + month + '/' + year + ', ' + hours + ':' + minutes;
+  const dateString = day + '/' + month + '/' + year + ', ' + hours + ':' + minutes;
 
   content.textContent = dateString;
 
   dateContainer.appendChild(content);
 }
 
-function addEditLink(){
+function addEditLink(urlParams){
   const iconsContainer = document.getElementsByClassName('icons')[0];
   const iconLink = document.createElement('a');
 

@@ -1,7 +1,5 @@
 import { terms } from './data.js';
 
-document.addEventListener('DOMContentLoaded', loadContent);
-
 const term = { 
   id: 404,
   title: '', 
@@ -12,6 +10,8 @@ const term = {
   ],
   lastEdited: new Date(),
 }
+
+loadContent();
 
 function loadContent() {
 
@@ -105,7 +105,6 @@ function addSectionContent(index, term, section, content){
     term.sections[index].description = event.target.value;
     adjustTextareaHeight(sectionContent);
   });
-  //sectionContent.innerHTML = content;
   section.appendChild(sectionContent);
 }
 
