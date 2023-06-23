@@ -14,10 +14,9 @@ function loadContent() {
   const term = terms.find((term) => term.id === parseInt(urlParams.get('id')));
 
   addHeader(term.title)
-
   addSections(term);
-
   addLastEdited(term);
+  addEditLink();
 
 }
 
@@ -80,4 +79,14 @@ var minutes = date.getMinutes();
   content.textContent = dateString;
 
   dateContainer.appendChild(content);
+}
+
+function addEditLink(){
+  const iconsContainer = document.getElementsByClassName('icons')[0];
+  const iconLink = document.createElement('a');
+
+  iconLink.innerHTML = '<ion-icon name="create-outline"></ion-icon>';
+  iconLink.href= "edit.html?id=" + urlParams.get('id');
+
+  iconsContainer.insertBefore(iconLink, iconsContainer.firstChild);
 }

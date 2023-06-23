@@ -72,6 +72,12 @@ h1{
   gap: 10px;
 }
 
+.icons a{
+  text-decoration: none;
+  color: white;
+  display: flex;
+}
+
 .landing-content{
   color: white;
   display: flex;
@@ -235,4 +241,79 @@ h1{
 #show-date-container{
   margin: 0px 20%;
   margin-top: 100px;
+}
+
+#show-header input{
+  background-color: #6c74b9;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  outline: none;
+  padding: 0;
+}
+
+#show-sections-container input{
+  background-color: rgb(225, 225, 225);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  outline: none;
+  padding: 0;
+}
+
+#show-sections-container textarea{
+  background-color: rgb(225, 225, 225);
+  width: 100%;
+  height: auto;
+  resize: none;
+  white-space: pre-wrap;
+  line-height: 150%;
+  font-size: 1.25rem;
+  font-family: 'Courier New', Courier, monospace;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 0;
+  display: block;
+}
+
+#button-container{
+  display: flex;
+  justify-content: center;
+}
+
+.section-header-wrapper{
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.delete-section-button{
+  background: transparent;
+  border: none;
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.delete-section-button ion-icon{
+  font-size: 2rem;
+}
+
+.add-section-button{
+  margin: 25px 20%;
+  font-size: 1.25rem;
+  background: transparent;
+  border: none;
+  color: blue;
+  cursor: pointer;
 }
